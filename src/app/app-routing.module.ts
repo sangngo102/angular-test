@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './page/homepage/homepage.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthRoutingModule } from './auth/auth-routing.module';
 
-const routes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'oauth', component: AuthComponent}];
+const routes: Routes = [{ path: '', pathMatch: 'full', redirectTo: '' }];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [AuthRoutingModule, RouterModule.forRoot(routes)],
   declarations: [],
   exports: [RouterModule],
 })
